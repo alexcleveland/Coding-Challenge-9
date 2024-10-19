@@ -28,7 +28,7 @@ class Section {
         this.books.push(book);
     }
     getAvailableBooks() {
-        return this.books.filter(book => book.isAvailable).length;
+        return this.books.filter(book => book.isAvailable);
     }
     listBooks() {
         this.books.forEach(book => {
@@ -38,7 +38,7 @@ class Section {
     }
 // Task 5 Handle Books Borrowing and Returning
 
- calculateTotalBooksAvailable() {
+calculateTotalBooksAvailable() {
     return this.getAvailableBooks();
  }
 }
@@ -50,7 +50,7 @@ class Section {
             this.name = name;
             this.borrowedBooks =[];
         }
-        borrowedBook(book) {
+        borrowBook(book) {
             if (book.isAvailable){
                 book.isAvailable = false;
                 this.borrowedBooks.push(book);
@@ -125,5 +125,5 @@ fiction.listBooks();
 
 // Calculate total available books in each section
 
-console.log(`Total available books in Fiction: ${fiction.getAvailableBooks()}`);
-console.log(`Total available books in Science: ${science.getAvailableBooks()}`);
+console.log(`Total available books in Fiction: ${fiction.getAvailableBooks().length}`);
+console.log(`Total available books in Science: ${science.getAvailableBooks().length}`);
