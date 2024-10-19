@@ -35,7 +35,13 @@ class Section {
             console.log(`${book.getDetails()}, Available: ${book.isAvailable}`);
              
         });
-    }}
+    }
+// Task 5 Handle Books Borrowing and Returning
+
+ calculateTotalBooksAvailable() {
+    return this.getAvailableBooks();
+ }
+}
 
     // Task 3 Create a Patron Class
 
